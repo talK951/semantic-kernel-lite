@@ -1,0 +1,40 @@
+# Dependency directories
+venv/
+.env
+.env.*
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Compiled source
+*.class
+*.o
+*.so
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Backup files
+*~
+*.swp
+*.bak
+
+# Git files
+.git/
+
+# Optional: if using yarn
+.yarn/
+.pnp.*
