@@ -15,8 +15,20 @@ model = Model_OpenAI("chat_gpt", api_key, "gpt-4.1-nano")
 kernel.set_ai_model(model)
 
 args = KernelArguments()
-args({"name": "tal" ,"age":"20", "height": "five feet nine inches"})
 
-prompt="Write exactly one joke about the person i am providing, be creative and funny. \n\n PERSON: \n name={{ $name }}\n age={{ $age }}\n height={{ $height }}"
+history = ""
 
-print(kernel.invoke_async(prompt=prompt, arguments=args))
+user_input = input()
+
+
+while (True):
+    args.add_arguments({"chat_history": history, "user_input": user_input})
+    prompt = "user_input={{ $user_input }} \n\n instructions=You are a chatbot assistant respond to the request.   \n\n  chat_history={{ $chat_history }}"
+
+    answer = kernel.invoke(prompt=prompt, arguments=args)
+    print("==============================")
+    history += "\nuser request=" + user_input + "\nAssistants reponse=" + answer
+    print(f"<<<<<<<<{history}>>>>>>>>>>>")
+    print(answer)
+    user_input = input()
+

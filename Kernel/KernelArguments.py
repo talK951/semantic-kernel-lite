@@ -7,7 +7,7 @@ class KernelArguments:
     def __init__(self):
         self.arguments = {}
 
-    def __call__(self, arguments: dict[str, str]):
+    def add_arguments(self, arguments: dict[str, str]):
         self.arguments = self.arguments | arguments
 
     def execute(self, prompt: str):
