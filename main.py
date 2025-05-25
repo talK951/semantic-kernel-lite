@@ -1,9 +1,9 @@
 from dotenv import load_dotenv
 import os
 
-from SemanticKernel.Kernel import Kernel
-from SemanticKernel.KernelArguments import KernelArguments
-from SemanticKernel.Models.Model_OpenAI import Model_OpenAI
+from Kernel.Kernel import Kernel
+from Kernel.KernelArguments import KernelArguments
+from Kernel.Models.Model_OpenAI import Model_OpenAI
 
 # Load environment variables from .env file
 load_dotenv()

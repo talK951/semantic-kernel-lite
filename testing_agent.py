@@ -1,8 +1,8 @@
-from SemanticKernel.KernelArguments import KernelArguments
-from SemanticKernel.KernelFunctions import kernel_function
-from SemanticKernel.Kernel import Kernel
-from SemanticKernel.KernelModes import KernelModes
-from SemanticKernel.Models.Model_OpenAI import Model_OpenAI
+from Kernel.KernelArguments import KernelArguments
+from Kernel.KernelFunctions import kernel_function
+from Kernel.Kernel import Kernel
+from Kernel.KernelModes import KernelModes
+from Kernel.Models.Model_OpenAI import Model_OpenAI
 from dotenv import load_dotenv
 import os
 
@@ -26,7 +26,7 @@ def add_cheeze():
 def add_tomato_suace():
     print("add tomato sauce to pizza")
 
-@kernel_function(name="add_sausage", description="add sausage to pizza")
+@kernel_function(name="add_sausage", description="add sausage to pizza Note sausage is a meat")
 def add_sausage():
     print("add sausage to pizza")
 
@@ -34,11 +34,15 @@ def add_sausage():
 def add_vegtables():
     print("add vegtables to pizza")
 
+@kernel_function(name="deliver_pizza", description="deliver pizza to costumer")
+def deliver_pizza():
+    print("deliver pizza to costumer")
+
 kernel.add_plugin(create_pizza)
 kernel.add_plugin(add_cheeze)
 kernel.add_plugin(add_sausage)
-kernel.add_plugin(add_tomato_suace)
 kernel.add_plugin(add_vegtables)
+kernel.add_plugin(deliver_pizza)
 
-output = kernel.invoke(prompt="make a pizza with sausage", mode=KernelModes.AGENT, arguments=KernelArguments())
+output = kernel.invoke(prompt="make a pizza with meat then deliver it", mode=KernelModes.AGENT, arguments=KernelArguments())
 print(output)

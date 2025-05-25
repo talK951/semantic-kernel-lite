@@ -1,5 +1,5 @@
-from SemanticKernel.KernelFunctions import kernel_function
-from SemanticKernel.Kernel import Kernel
+from Kernel.KernelFunctions import kernel_function
+from Kernel.Kernel import Kernel
 
 class Plugin:
     @kernel_function(name="print_msg")

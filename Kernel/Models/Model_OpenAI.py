@@ -1,4 +1,4 @@
-from SemanticKernel.Models.Model_LLM import Model_LLM
+from Kernel.Models.Model_LLM import Model_LLM
 from openai import OpenAI
 
 
