@@ -1,8 +1,8 @@
-from Kernel.KernelArguments import KernelArguments
-from Kernel.KernelFunctions import kernel_function
-from Kernel.Kernel import Kernel
-from Kernel.KernelModes import KernelModes
-from Kernel.Models.Model_OpenAI import Model_OpenAI
+from SemanticKernel.KernelArguments import KernelArguments
+from SemanticKernel.KernelFunctions import kernel_function
+from SemanticKernel.Kernel import Kernel
+from SemanticKernel.KernelModes import KernelModes
+from SemanticKernel.Models.Model_OpenAI import Model_OpenAI
 from dotenv import load_dotenv
 import os
 
