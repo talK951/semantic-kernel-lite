@@ -44,5 +44,5 @@ kernel.add_plugin(add_sausage)
 kernel.add_plugin(add_vegtables)
 kernel.add_plugin(deliver_pizza)
 
-output = kernel.invoke(prompt="make a pizza with meat then deliver it", mode=KernelModes.AGENT, arguments=KernelArguments())
+output = kernel.invoke(prompt="make a pizza and deliver it", mode=KernelModes.AGENT, arguments=KernelArguments())
 print(output)
